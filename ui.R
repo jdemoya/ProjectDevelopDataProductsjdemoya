@@ -1,19 +1,23 @@
 shinyUI(
 pageWithSidebar(
-  #Application title
-  headerPanel("Diabetes prediction"),
+  headerPanel("Project Developing Data products jdemoya"),
 
   sidebarPanel(
-    numericInput('glucose','Glucose mg/dl',90,min = 50,max = 200, step = 5),
-	submitButton('Submit')
+    numericInput('Valuea','Value a',1,min=0.1,max=1000,step=0.1),
+    numericInput('Valueb','Value b',1,min=0,max=1000,step=0.1),
+    numericInput('Valuec','Value c',1,min=0,max=1000,step=0.1),
+    submitButton('Compute')
   ),
   mainPanel(
-    h3('Results of prediction'),
-	h4('You entered'),
-	verbatimTextOutput("inputValue"),
-	h4('Which resulted in a prediction of '),
-	verbatimTextOutput("prediction")
+    h3('Parameters'),
+	h4('Value a'),
+	verbatimTextOutput("inputValuea"),
+	h4('Value b'),
+	verbatimTextOutput("inputValueb"),
+	h4('Value c'),
+	verbatimTextOutput("inputValuec"),
+	h4('Roots Second Grade Equation ax^2 + bx + c = 0 '),
+	verbatimTextOutput("roots")
   )
  )
 );
- 
