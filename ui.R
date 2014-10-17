@@ -6,7 +6,7 @@ pageWithSidebar(
     numericInput('Valuea','Value a',1,min=0.1,max=1000,step=0.1),
     numericInput('Valueb','Value b',1,min=0,max=1000,step=0.1),
     numericInput('Valuec','Value c',1,min=0,max=1000,step=0.1),
-    submitButton('Compute')
+    submitButton('Compute'),
   ),
   mainPanel(
     h3('Parameters'),
