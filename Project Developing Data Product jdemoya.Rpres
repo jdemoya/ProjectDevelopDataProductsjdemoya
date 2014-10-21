@@ -1,34 +1,63 @@
 Project Developing Data Products jdemoya
 ========================================================
-author: José De Moya
-date: October 17, 2014
+author: Jose De Moya
+date: `r format(Sys.Date(),format="%B %d %Y")`
+transition: rotate
 
-Brief resume of my Practical Machine Learning Project
+
+Third Degree Equations Analysis
+
+
 Business Intelligence, Big Data and Data Science Consultant
 Bogotà, Colombia
 
-First Slide
+General Equation Third Degree
 ========================================================
 
-The source of the data 
+The Function we are going to analyze is 
 
-For more details on authoring R presentations click the
-**Help** button on the toolbar.
+y <- a*x^3 + b*x^2 + c*x + d;
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+That is the third degree general equation those general solution was discovered for Tartaglia and Cardano in the century XV
 
-Slide With Code
+Generate Data
 ========================================================
+
+First Generate the data for plotting the curves
 
 ```{r}
-summary(cars)
+a <- 1;
+b <- 1;
+c <- 1;
+d <- 1;
+x <- seq(-20,20,by=0.001);
+y <- a*x^3 + b*x^2 + c*x + d;
+x;
 ```
 
-Slide With Plot
+Graph of the Function
 ========================================================
 
-```{r, echo=FALSE}
-plot(cars)
+Next we plot it and sign the roots
+
+```{r, echo=TRUE}
+library(rCharts);
+ds <- as.data.frame(x);
+ds <- cbind(ds,y)
+par(mfrow=c(1,1));
+r1 <- rPlot(y ~ x,data=ds,type="point",color="blue");
+r1$print("chart1") 
+r1$save('myPlot.html');
+#r1$publish('myPlot.html',host='rpubs');
+```
+First Derivative of the function
+========================================================
+
+We plot the derivative of the funcion in the same graph. The first derivative tell us the maximum or minimum of a function
+
+```{r, echo=TRUE}
+z <- 3*a*x^2 + 2*b*x + c;
+minz <- min(z);
+minz;
+plot(x,z);
 ```

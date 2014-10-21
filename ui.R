@@ -7,6 +7,7 @@ pageWithSidebar(
     numericInput('Valueb','Value b',1,min=0,max=1000,step=0.1),
     numericInput('Valuec','Value c',1,min=0,max=1000,step=0.1),
     submitButton('Compute'),
+    p("Documentation:",a("Project_jdemoya",href="HelpProject.html"))
   ),
   mainPanel(
     h3('Parameters'),
